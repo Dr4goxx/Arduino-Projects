@@ -17,11 +17,13 @@ bool leftOne = true;
 bool midOne = true;
 bool rightOne = true;
 
+
+//set the time here
 int h = 1; //hour
-int m = 29; //minutes
-int s = 20; //seconds
-int d = 19;
-int flag = 13;
+int m = 3; //minutes
+int s = 50; //seconds
+int d = 20; //date
+int flag = 13; //24 hour time
 int TIME;
 int state1;
 
@@ -73,13 +75,13 @@ void loop() {
     temperaturething();
   }
 
-  if (s == 60) {
-    s = 0;
+  if (s == 59) {
+    s = -1;
     m = m + 1;
   }
-  if (m == 60)
+  if (m == 59)
   {
-    m = 0;
+    m = -1;
     h = h + 1;
     flag = flag + 1;
   }
@@ -180,4 +182,3 @@ void temperaturething()
   lcd.print(temp);
   lcd.print("C");
 }
-
